@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh; background: url('{% static 'mechanic_bg.jpg' %}') no-repeat center center/cover;">
+  <div class="card p-5 shadow-lg" style="width: 600px; background-color: rgba(255, 255, 255, 0.95); border-radius: 1.5rem;">
+    <h3 class="text-center mb-4 fw-bold text-primary">Book a Mechanic</h3>
+    <p class="text-center text-muted mb-4">Fill in your details and book a service easily!</p>
+    
+    <form method="POST">
+      {% csrf_token %}
+      
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Full Name</label>
+        <input type="text" name="name" class="form-control" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Email</label>
+        <input type="email" name="email" class="form-control" placeholder="you@example.com" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Phone</label>
+        <input type="text" name="phone" class="form-control" placeholder="e.g. +91 9876543210" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Service Type</label>
+        <select name="service_type" class="form-select" required>
+          <option value="">Select Service</option>
+          <option>Car Repair</option>
+          <option>Bike Repair</option>
+          <option>Fan Repair</option>
+          <option>AC Repair</option>
+          <option>Light Installation</option>
+          <option>Plumbing</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label fw-semibold">Preferred Date</label>
+          <input type="date" name="preferred_date" class="form-control" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label fw-semibold">Preferred Time</label>
+          <input type="time" name="preferred_time" class="form-control" required>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Additional Notes</label>
+        <textarea name="description" rows="3" class="form-control" placeholder="Describe your issue (optional)"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-success w-100 py-2 mt-3 rounded-pill">Confirm Booking</button>
+    </form>
+  </div>
+</div>
+
+<style>
+.card input, .card select, .card textarea {
+  border-radius: 0.75rem;
+}
+.card input:focus, .card select:focus, .card textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px #007bff5a;
+}
+</style>
+
+{% endblock %}

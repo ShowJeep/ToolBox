@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-5">
+
+    <!-- Title as button-style banner -->
+    <div class="text-center mb-5">
+        <h2 class="py-3 px-4 d-inline-block rounded-pill" style="background-color: #007bff; color: white; font-weight: bold;">
+            Electrician Services
+        </h2>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+
+        <!-- TV Card -->
+        <div class="col-md-3">
+            <div class="card h-100 text-center">
+                <img src="{% static 'tv.jpeg' %}" class="card-img-top" alt="TV">
+                <div class="card-body">
+                    <h5 class="card-title">TV</h5>
+                    <p class="card-text text-muted small mb-2">Electronics</p>
+                    <p class="card-text">Fast TV repair services including screen and connectivity issues.</p>
+                    <a href="{% url 'booking' %}" class="btn btn-primary btn-sm">Details</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- AC Card -->
+        <div class="col-md-3">
+            <div class="card h-100 text-center">
+                <img src="{% static 'ac.jpg' %}" class="card-img-top" alt="AC">
+                <div class="card-body">
+                    <h5 class="card-title">AC</h5>
+                    <p class="card-text text-muted small mb-2">Cooling Systems</p>
+                    <p class="card-text">Reliable AC servicing, installation, and troubleshooting.</p>
+                    <a href="{% url 'booking' %}" class="btn btn-primary btn-sm">Details</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAN Card -->
+        <div class="col-md-3">
+            <div class="card h-100 text-center">
+                <img src="{% static 'fan.jpg' %}" class="card-img-top" alt="FAN">
+                <div class="card-body">
+                    <h5 class="card-title">FAN</h5>
+                    <p class="card-text text-muted small mb-2">Ventilation</p>
+                    <p class="card-text">Ceiling and table fan repairs, balancing, and motor servicing.</p>
+                    <a href="{% url 'booking' %}" class="btn btn-primary btn-sm">Details</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- LIGHT Card -->
+        <div class="col-md-3">
+            <div class="card h-100 text-center">
+                <img src="{% static 'light.jpeg' %}" class="card-img-top" alt="LIGHT">
+                <div class="card-body">
+                    <h5 class="card-title">LIGHT</h5>
+                    <p class="card-text text-muted small mb-2">Lighting</p>
+                    <p class="card-text">Installation and repair of indoor and outdoor lighting solutions.</p>
+                    <a href="{% url 'booking' %}" class="btn btn-primary btn-sm">Details</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- FRIDGE Card -->
+        <div class="col-md-3">
+            <div class="card h-100 text-center">
+                <img src="{% static 'fridge.jpeg' %}" class="card-img-top" alt="FRIDGE">
+                <div class="card-body">
+                    <h5 class="card-title">FRIDGE</h5>
+                    <p class="card-text text-muted small mb-2">Appliances</p>
+                    <p class="card-text">Quick refrigerator repair and maintenance services.</p>
+                    <a href="{% url 'booking' %}" class="btn btn-primary btn-sm">Details</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+/* Card styling */
+.card {
+    border: none;
+    border-radius: 1rem;
+    background-color: #fefefe;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    background-color: #f1f9ff;
+}
+
+/* Make images slightly bigger */
+.card-img-top {
+    border-radius: 1rem 1rem 0 0;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Button styling */
+.btn-primary {
+    border-radius: 30px;
+    padding: 0.5rem 1.5rem;
+}
+</style>
+
+{% endblock %}

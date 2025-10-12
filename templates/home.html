@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+  body {
+    background-color: #f8f9fa;
+  }
+
+  .hero {
+    background: linear-gradient(120deg, #1e806fff, #85ceddff);
+    color: white;
+    border-radius: 1rem;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .card {
+    border: none;
+    border-radius: 1rem;
+    background-color: #8f9baaff; /* Very light off-white for minimal color */
+    box-shadow: 0 4px 10px #00000014;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    background-color: #f1f9ff; 
+}
+
+  .card-img-top {
+    border-radius: 1rem 1rem 0 0;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 30px;
+    padding: 0.5rem 1.5rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+<div class="container mt-5">
+  <!-- Hero Section -->
+  <div class="hero mb-5">
+    <h1 class="display-5 fw-bold">Welcome to ToolBox</h1>
+    <p class="lead">Your one-stop solution for Fixing Things.</p>
+    <hr class="my-4 border-light">
+    <p>Explore our wide range of services and find your perfect expert today!</p>
+    <a class="btn btn-light btn-lg mt-3" href="#" role="button">Learn more</a>
+  </div>
+
+  <!-- Cards Section -->
+  <div class="row justify-content-center g-4">
+    <!-- Electrician -->
+    <div class="col-md-4">
+      <div class="card h-100 text-center">
+        <img src="{% static 'electrician.jpg' %}" class="card-img-top" alt="Electrician">
+        <div class="card-body">
+          <h5 class="card-title">Electrician</h5>
+          <p class="card-text text-muted small mb-2">Reliable And Certified Professionals</p>
+          <p class="card-text">We handle wiring, lighting, and electrical repairs with care and precision.</p>
+          <a href="{% url 'electrician_details' %}" class="btn btn-primary">Details</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mechanic -->
+    <div class="col-md-4">
+      <div class="card h-100 text-center">
+        <img src="{% static 'mechanic.jpeg' %}" class="card-img-top" alt="Mechanic">
+        <div class="card-body">
+          <h5 class="card-title">Mechanic</h5>
+          <p class="card-text text-muted small mb-2">Trusted Auto Experts</p>
+          <p class="card-text">We provide fast and reliable car maintenance and repair services.</p>
+          <a href="{% url 'mechanic_details' %}" class="btn btn-primary">Details</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plumber -->
+    <div class="col-md-4">
+      <div class="card h-100 text-center">
+        <img src="{% static 'plumber.jpg' %}" class="card-img-top" alt="Plumber">
+        <div class="card-body">
+          <h5 class="card-title">Plumber</h5>
+          <p class="card-text text-muted small mb-2">Quick Fixes, Lasting Results</p>
+          <p class="card-text">From leaks to installations, our plumbers are ready to help.</p>
+          <a href="{% url 'plumber_details' %}" class="btn btn-primary">Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

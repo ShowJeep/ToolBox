@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+.auth-container {
+  min-height: 100vh;
+  background: url("{% static 'mechanic_bg.jpg' %}") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-card {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-card h2 {
+  text-align: center;
+  color: #007bff;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  border-radius: 0.5rem;
+  padding: 0.7rem 1rem;
+}
+
+.btn-custom {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border-radius: 2rem;
+  padding: 0.6rem;
+  transition: background 0.3s ease;
+}
+
+.btn-custom:hover {
+  background-color: #0056b3;
+}
+</style>
+
+<div class="auth-container">
+  <div class="auth-card">
+    <h2>Login</h2>
+    <form method="POST" action="#">
+      {% csrf_token %}
+      <div class="form-group mb-3">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group mb-4">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+      </div>
+
+      <button type="submit" class="btn btn-custom">Login</button>
+
+      <p class="text-center mt-3 mb-0">
+        Don’t have an account? <a href="{% url 'signup' %}" class="text-primary fw-bold">Sign Up</a>
+      </p>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

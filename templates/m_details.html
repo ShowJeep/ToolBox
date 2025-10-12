@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-5">
+
+    <!-- Title -->
+    <div class="text-center mb-5">
+        <h2 class="py-3 px-4 d-inline-block rounded-pill" style="background-color: #28a745; color: white; font-weight: bold;">
+            Mechanic Services
+        </h2>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+
+        <!-- Car Repair -->
+        <div class="col-md-3">
+            <div class="card h-100 text-center">
+                <img src="{% static 'car.jpeg' %}" class="card-img-top" alt="Car Repair">
+                <div class="card-body">
+                    <h5 class="card-title">Car Repair</h5>
+                    <p class="card-text text-muted small mb-2">Vehicles</p>
+                    <p class="card-text">Fast and reliable car maintenance and engine repair.</p>
+                    <a href="{% url 'booking' %}" class="btn btn-primary btn-sm">Details</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bike Repair -->
+        <div class="col-md-3">
+            <div class="card h-100 text-center">
+                <img src="{% static 'bike.jpeg' %}" class="card-img-top" alt="Bike Repair">
+                <div class="card-body">
+                    <h5 class="card-title">Bike Repair</h5>
+                    <p class="card-text text-muted small mb-2">Two-Wheelers</p>
+                    <p class="card-text">Quick bike servicing, brake and engine maintenance.</p>
+                    <a href="{% url 'booking' %}" class="btn btn-primary btn-sm">Details</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Oil Change -->
+        <div class="col-md-3">
+            <div class="card h-100 text-center">
+                <img src="{% static 'oil.jpg' %}" class="card-img-top" alt="Oil Change">
+                <div class="card-body">
+                    <h5 class="card-title">Oil Change</h5>
+                    <p class="card-text text-muted small mb-2">Maintenance</p>
+                    <p class="card-text">Regular oil changes for smooth engine performance.</p>
+                    <a href="{% url 'booking' %}" class="btn btn-primary btn-sm">Details</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

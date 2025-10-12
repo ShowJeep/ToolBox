@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-5">
+
+    <!-- Title -->
+    <div class="text-center mb-5">
+        <h2 class="py-3 px-4 d-inline-block rounded-pill" style="background-color: #ffc107; color: white; font-weight: bold;">
+            Plumber Services
+        </h2>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+
+        <!-- Pipe Fix -->
+        <div class="col-md-4">
+            <div class="card h-100 text-center">
+                <img src="{% static 'pipe.jpg' %}" class="card-img-top" alt="Pipe Fix">
+                <div class="card-body">
+                    <h5 class="card-title">Pipe Fix</h5>
+                    <p class="card-text text-muted small mb-2">Repairs</p>
+                    <p class="card-text">Quick and reliable pipe leak detection and repair.</p>
+                    <a href="{% url 'booking' %}" class="btn btn-primary btn-sm">Details</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Faucet Installation -->
+        <div class="col-md-4">
+            <div class="card h-100 text-center">
+                <img src="{% static 'FaucetInstallation.jpg' %}" class="card-img-top" alt="Faucet Installation">
+                <div class="card-body">
+                    <h5 class="card-title">Faucet Installation</h5>
+                    <p class="card-text text-muted small mb-2">Installations</p>
+                    <p class="card-text">Professional faucet and sink installation services.</p>
+                    <a href="{% url 'booking' %}" class="btn btn-primary btn-sm">Details</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
