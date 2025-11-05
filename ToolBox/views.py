@@ -21,3 +21,6 @@ def signup_view(request):
 
 def booking_view(request):
     return render(request, 'booking.html')
+
+def admin_view(request):
+    return render(request, 'admin.html')

@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-5">
+
+  <!-- Page Title -->
+  <div class="text-center mb-5">
+    <h2 class="py-3 px-5 d-inline-block rounded-pill shadow-sm" style="background-color:#343a40; color:white;">
+      Admin Dashboard
+    </h2>
+  </div>
+
+  <!-- User Requests Section -->
+  <div class="card mb-5 p-4 shadow-sm">
+    <h4 class="mb-4 text-primary">🧾 Service Requests</h4>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover align-middle">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Request ID</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Service Type</th>
+            <th scope="col">Date</th>
+            <th scope="col">Assigned To</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Dummy Rows -->
+          <tr>
+            <td>#101</td>
+            <td>Ravi Kumar</td>
+            <td>AC Repair</td>
+            <td>2025-10-14</td>
+            <td><span class="badge bg-danger">Not Assigned</span></td>
+            <td><span class="badge bg-warning text-dark">Pending</span></td>
+            <td>
+              <button class="btn btn-sm btn-primary">Assign Technician</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>#102</td>
+            <td>Priya Singh</td>
+            <td>Plumbing Leak</td>
+            <td>2025-10-15</td>
+            <td><span class="badge bg-success">Assigned (Rohit)</span></td>
+            <td><span class="badge bg-warning text-dark">In Progress</span></td>
+            <td>
+              <button class="btn btn-sm btn-success">Mark Completed</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>#103</td>
+            <td>Aman Verma</td>
+            <td>Wiring Repair</td>
+            <td>2025-10-16</td>
+            <td><span class="badge bg-success">Assigned (Meena)</span></td>
+            <td><span class="badge bg-success">Completed</span></td>
+            <td>
+              <button class="btn btn-sm btn-secondary" disabled>Done</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Technician Section -->
+  <div class="card p-4 shadow-sm">
+    <h4 class="mb-4 text-primary">👷 Technician List</h4>
+    <div class="table-responsive">
+      <table class="table table-striped align-middle">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Technician Name</th>
+            <th scope="col">Role</th>
+            <th scope="col">Availability</th>
+            <th scope="col">Current Task</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Rohit Sharma</td>
+            <td>Plumber</td>
+            <td><span class="badge bg-danger">Busy</span></td>
+            <td>Leak Repair - Priya Singh</td>
+          </tr>
+
+          <tr>
+            <td>Meena Das</td>
+            <td>Electrician</td>
+            <td><span class="badge bg-success">Available</span></td>
+            <td>-</td>
+          </tr>
+
+          <tr>
+            <td>Arun Patel</td>
+            <td>Mechanic</td>
+            <td><span class="badge bg-success">Available</span></td>
+            <td>-</td>
+          </tr>
+
+          <tr>
+            <td>Sunil Kumar</td>
+            <td>Electrician</td>
+            <td><span class="badge bg-danger">Busy</span></td>
+            <td>Wiring - Aman Verma</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<style>
+body {
+  background-color: #f8f9fa;
+}
+
+.card {
+  border: none;
+  border-radius: 1rem;
+}
+
+.table th {
+  text-align: center;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.btn-sm {
+  border-radius: 30px;
+  padding: 0.25rem 1rem;
+}
+
+.badge {
+  font-size: 0.85rem;
+  padding: 0.5em 0.75em;
+}
+</style>
+
+{% endblock %}
